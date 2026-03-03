@@ -24,3 +24,10 @@ def test_filter_returns_interactions_below_max() -> None:
     result = filter_by_max_item_id(interactions=interactions, max_item_id=2)
     assert len(result) == 1
     assert result[0].id == 1
+
+"""In this test we are checking that the on element is on the boundary, but the second is not. So the second will not get into 'result'"""
+def test_filter_includes_interaction_at_boundary() -> None:
+    interactions = [_make_log(1, 1, 2), _make_log(2, 2, 3)]
+    result = filter_by_max_item_id(interactions=interactions, max_item_id=2)
+    assert len(result) == 1
+    assert result[0].item_id == 2

@@ -1,4 +1,4 @@
-# Lab 4 — Testing, Front-end, and AI Agents
+# Lab 4 - Testing, Front-end, and AI Agents
 
 > [!NOTE]
 > The lab will be modified throughout the course.

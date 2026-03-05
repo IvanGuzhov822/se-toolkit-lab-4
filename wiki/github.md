@@ -30,8 +30,8 @@
   - [Head repository](#head-repository)
   - [Default branch](#default-branch)
   - [Base branch](#base-branch)
-  - [Compare branch](#compare-branch)
-    - [`<compare-branch-name>`](#compare-branch-name)
+  - [What is a compare branch](#what-is-a-compare-branch)
+    - [`<compare-branch>`](#compare-branch)
 - [Create a pull request in your fork](#create-a-pull-request-in-your-fork)
   - [Open the PR editor using `GitHub`](#open-the-pr-editor-using-github)
     - [Open the PR editor using a button](#open-the-pr-editor-using-a-button)
@@ -107,15 +107,15 @@ Placeholder values:
 
 ### `upstream`
 
-In [`Git`](./git.md#what-is-git), `upstream` is the conventional name for the [remote](./git.md#remote) that points to the original [repository](#repository) that was [forked](#fork).
+In [`Git`](./git.md#what-is-git), `upstream` is the conventional name for the [remote](./git.md#what-is-remote) that points to the original [repository](#repository) that was [forked](#fork).
 
 ### `origin`
 
-In [`Git`](./git.md#what-is-git), `origin` is the conventional name for the [remote](./git.md#remote) that points to your own copy of the [repository](#repository) — typically [your fork](#fork).
+In [`Git`](./git.md#what-is-git), `origin` is the conventional name for the [remote](./git.md#what-is-remote) that points to your own copy of the [repository](#repository) — typically [your fork](#fork).
 
 For example, if your fork [URL](./web-development.md#url) is [`<your-fork-url>`](#your-fork-url), then `origin` points to that URL.
 
-You can verify which URLs `origin` and `upstream` point to by [inspecting remotes](./gitlens.md#inspect-remotes).
+You can verify which URLs `origin` and `upstream` point to by [inspecting remotes](./gitlens.md#inspect-the-remotes).
 
 ### Browse a repository revision
 
@@ -155,11 +155,11 @@ When you fork a repository on `GitHub`, you create a personal copy under your `G
 
 ### `<your-fork-url>`
 
+The [URL](./web-development.md#url) of your [fork](#fork).
+
 Assume the [URL](./web-development.md#url) of the [repo that you forked](#fork-a-repo) is `https://github.com/<repo-owner-github-username>/<repo-name>`.
 
 Then, your fork URL should look like `https://github.com/<your-github-username>/<repo-name>`.
-
-We'll refer to this URL as `<your-fork-url>`.
 
 See also:
 
@@ -240,11 +240,11 @@ New [pull requests](#pull-request) and code merges target the default branch by 
 
 The base branch is the branch in the [base repository](#base-repository) that you want to merge your changes into.
 
-### Compare branch
+### What is a compare branch
 
-The compare branch (also called the pull request branch or head branch) is the branch that contains the changes you want to merge into the [base branch](#base-branch).
+The compare branch (also called the "pull request branch" or "head branch") is the branch that contains the changes you want to merge into the [base branch](#base-branch).
 
-#### `<compare-branch-name>`
+#### `<compare-branch>`
 
 A placeholder for the name of the [compare branch](#compare-branch).
 
@@ -281,20 +281,20 @@ A placeholder for the name of the [compare branch](#compare-branch).
    2. In `Filter repos`, write `<your-github-username>`.
    3. Click `<your-github-username>/<repo-name>` to select your fork.
 5. Select `main` as the [base branch](#base-branch):
-   1. Click `base: <branch-name>`.
+   1. Click `base: <branch>`.
    2. In `Find a branch`, write `main`.
    3. Click `main` in the list.
-6. Select `<compare-branch-name>` as the [compare branch](#compare-branch):
+6. Select `<compare-branch>` as the [compare branch](#compare-branch):
    1. Click `compare: main`.
-   2. In `Find a branch`, write [`<compare-branch-name>`](#compare-branch-name).
-   3. Click the `<compare-branch-name>` in the list.
+   2. In `Find a branch`, write [`<compare-branch>`](#compare-branch).
+   3. Click the `<compare-branch>` in the list.
 7. Click `Create pull request`.
 
 #### Open the PR editor using the branch list
 
 1. [Go to your fork](#go-to-your-fork).
 2. Click `main` under the repo name to view all branches.
-3. Click `<branch-name>` that you want to use for PR.
+3. Click `<branch>` that you want to use for PR.
 4. You'll see the `Contribute` button if the branch has commits that aren't yet in the `main` branch.
 5. Click `Contribute`.
 6. Click `Open pull request`.
@@ -364,16 +364,16 @@ A [label](https://docs.github.com/en/issues/using-labels-and-milestones-to-track
 1. [Go to your fork](#go-to-your-fork).
 2. Go to `Settings`.
 3. Go to `Code and automation`.
-4. Go to `Rules`.
-5. Go to `Rulesets`.
-6. Go to `New ruleset`.
-7. Go to `Add branch ruleset`.
+4. Click `Rules`.
+5. Click `Rulesets`.
+6. Click `New ruleset`.
+7. Click `New branch ruleset`.
 8. Set:
 
    1. `Ruleset Name`: `push`
    2. `Enforcement status`: `Active`
    3. `Target branches` -> `Add target` -> `Include default branch`
-   4. Rules:
+   4. `Branch rules`:
       - [x] `Restrict deletions`
       - [x] `Require a pull request before merging`:
          - `Required approvals`: `1`

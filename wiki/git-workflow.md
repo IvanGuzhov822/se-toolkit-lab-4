@@ -15,16 +15,14 @@ Outline:
 
 - [Create a `Lab Task` issue](#create-a-lab-task-issue)
 - [Switch to the `main` branch](#switch-to-the-main-branch)
-- [Detect conflicts](#detect-conflicts)
-- [Pull changes from `origin/main`](#pull-changes-from-originmain)
-- [Pull changes from `origin/main` and rebase](#pull-changes-from-originmain-and-rebase)
-- [Switch to a new branch](#switch-to-a-new-branch)
-  - [`<task-branch-name>`](#task-branch-name)
+- [Pull changes from `main` on `origin`](#pull-changes-from-main-on-origin)
+- [Pull changes from `main` on `upstream`](#pull-changes-from-main-on-upstream)
+- [Switch to the `<task-branch>`](#switch-to-the-task-branch)
+  - [`<task-branch>`](#task-branch)
 - [Edit files](#edit-files)
 - [Commit](#commit)
 - [(Optional) Undo commits](#optional-undo-commits)
-- [Publish the branch](#publish-the-branch)
-- [Push more commits](#push-more-commits)
+- [Push commits](#push-commits)
 - [Create a PR to the `main` branch in your fork](#create-a-pr-to-the-main-branch-in-your-fork)
 - [Get a PR review](#get-a-pr-review)
   - [PR review rules](#pr-review-rules)
@@ -39,34 +37,25 @@ Outline:
 
 ## Switch to the `main` branch
 
-[Switch to the `main` branch](./git-vscode.md#switch-to-the-branch-name-branch) in `VS Code`.
+[Switch to the `main` branch](./git-vscode.md#switch-to-the-branch) in `VS Code`.
 
-## Detect conflicts
+## Pull changes from `main` on `origin`
 
-[Detect conflicts with the `origin/main`](./git-vscode.md#detect-conflicts).
+[Pull changes](./git-vscode.md#pull-changes-from-the-branch-on-remote) from `main` on [`origin`](./github.md#origin).
 
-## Pull changes from `origin/main`
+## Pull changes from `main` on `upstream`
 
-[Pull changes from the `main` branch in your fork on `GitHub`](./git-vscode.md#pull-changes-from-originbranch-name).
+[Pull changes](./git-vscode.md#pull-changes-from-the-branch-on-remote) from `main` on [`upstream`](./github.md#upstream) to get the latest fixes from the instructors' repository.
 
-## Pull changes from `origin/main` and rebase
+## Switch to the `<task-branch>`
 
-You may see errors and messages about conflicts after pulling.
+[Create a new `<task-branch>` and switch to it](./git-vscode.md#switch-to-a-new-branch).
 
-Rebasing places your local commits on top of the commits from `origin/main`. Conflicts occur when commits from `origin/main` modified the same lines in the same files as your local commits.
+### `<task-branch>`
 
-Complete the following steps:
+The [new branch for the task](#switch-to-the-task-branch).
 
-1. [Pull and rebase from `origin/main`](./git-vscode.md#pull-changes-from-originbranch-name-and-rebase).
-2. If conflicts occur, [resolve them](./git-vscode.md#resolve-a-merge-conflict).
-
-## Switch to a new branch
-
-[Create a new branch and switch to it](./git-vscode.md#switch-to-a-new-branch).
-
-### `<task-branch-name>`
-
-We'll refer to the new branch as `<task-branch-name>`.
+Alternatively, the name of that branch (without `<` and `>`).
 
 ## Edit files
 
@@ -74,27 +63,23 @@ We'll refer to the new branch as `<task-branch-name>`.
 
 ## Commit
 
-[Commit changes](./git-vscode.md#commit-changes) to the [`<task-branch-name>`](#task-branch-name) to complete the task.
+[Commit changes](./git-vscode.md#commit-changes) to the [`<task-branch>`](#task-branch) to complete the task.
 
 ## (Optional) Undo commits
 
 [Undo commits](./git-vscode.md#undo-commits) if necessary.
 
-## Publish the branch
+## Push commits
 
-[Publish the branch](./git-vscode.md#publish-the-branch) with your changes.
-
-## Push more commits
-
-[Push more commits](./git-vscode.md#push-more-commits) to the published branch if necessary.
+1. [Publish the branch](./git-vscode.md#publish-the-branch) with your changes.
+2. [Push more commits](./git-vscode.md#push-more-commits) to the published branch if necessary.
 
 ## Create a PR to the `main` branch in your fork
 
-[Create a PR](./github.md#create-a-pull-request-in-your-fork) from the branch [`<task-branch-name>`](#task-branch-name) to the branch `<main>`.
-Placeholder values:
+[Create a PR](./github.md#create-a-pull-request-in-your-fork) from the branch [`<task-branch>`](#task-branch) to `main`. Replace:
 
-- `<repo-name>` is `se-toolkit-lab-<N>` where `<N>` is the number of the lab.
-- `<branch-name>` is `<task-branch-name>`.
+- `<repo-name>` with `se-toolkit-lab-<N>` where `<N>` is the number of the lab.
+- `<branch>` with `<task-branch>`.
 - [`<repo-owner-github-username>`] is `inno-se-toolkit`.
 - [`<your-github-username>`](./github.md#your-github-username) is your `GitHub` username.
 
